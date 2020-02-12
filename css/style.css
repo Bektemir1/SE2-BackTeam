@@ -1,0 +1,89 @@
+header h1{
+    color: white;
+}
+body{
+    background-color: #ffe4a4;
+}
+header{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 95%;
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #111177;
+}
+#img_title{
+    display: inline-block;
+    float: left;
+    line-height: 50px;
+}
+#link_to_mail{
+    display: inline-block;
+    float: right;
+    color: white;
+    padding-top: 50px;
+    margin-right: 4%;
+    font-style: italic;
+}
+#body{
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 15px;
+    background-color: #111177;
+}
+#login_box{
+    display: inline-block;
+    background-color: #ffe4a4;
+    width: 30%;
+    margin: 50px 35%;
+    height: 400px;
+}
+#sis{
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+form{
+    display: block;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 70px;
+}
+#user_number{
+    width: 100%;
+}
+#user_password{
+    width: 100%;
+}
+#user_label{
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+    display: block;
+    margin-bottom: -10px;
+}
+#password_label{
+    text-align: left;
+    display: block;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+#login_butt{
+    display: block;
+    margin-top: 30px;
+    float: right;
+    font-style: italic;
+    font-weight: bold;
+    width: 100px;
+}
+#cant_access{
+    display: block;
+    margin-left: 20px;
+    line-height: 260px;
+    font-style: italic;
+}
