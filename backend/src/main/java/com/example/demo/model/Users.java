@@ -12,6 +12,14 @@ public class Users {
     private String firstname;
     private String lastname;
     private String password;
+//    private Role role;
+    private String email;
+//    private Date last_login_date;
+//    private Date registration_date;
+    private String last_login_ip;
+    private int balance;
+    private int status;
+//    private Date birh_date;
 
     public Users() {
     }
@@ -19,6 +27,17 @@ public class Users {
     public Users(Users user) {
         this.username = user.getUsername();
         this.password = user.getPassword();
+    }
+
+    public Users(String username, String firstname, String lastname, String password, String email, String last_login_ip, int balance, int status) {
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
+        this.email = email;
+        this.last_login_ip = last_login_ip;
+        this.balance = balance;
+        this.status = status;
     }
 
     public Integer getId() {

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @Controller
 public class MainController {
     @Autowired // This means to get the bean called userRepository
@@ -21,8 +23,9 @@ public class MainController {
     @RequestMapping("/login")
     public String getLoginPage() { return "login";}
 
-    @RequestMapping("/hello")
-    public String getHelloPage() {
-        return "hello";
+    @RequestMapping("/")
+    public String getHomePage(Principal principal) {
+        System.out.println(principal.getName());
+        return "index";
     }
 }

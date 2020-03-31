@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.service;
 
 import com.example.demo.connectDB.UserRepository;
 import com.example.demo.model.MyUserDetails;
