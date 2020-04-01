@@ -1,9 +1,8 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.Configs.JwtUtil;
+import com.example.demo.Service.JwtUtil;
 import com.example.demo.Models.AuthenticationRequest;
 import com.example.demo.Models.AuthenticationResponse;
-import com.example.demo.Models.Credentials;
 import com.example.demo.Service.MyUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,14 +25,13 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtTokenUtil;
 
-//    @RequestMapping(value = "/login", method = RequestMethod.POST)
-//    public String login(@RequestBody Credentials credentials) {
-//        return "username: " + credentials.getUsername() + "password: " + credentials.getPassword();
-//    }
+    // Getting all user data
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public UserDetails getUsersDataById(@AuthenticationPrincipal UserDetails userDetails) {
+        return userDetails;
+    }
 
-    @RequestMapping("/hello")
-    public String hello() { return "Hello"; }
-
+    // Authentication with jwt token
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
         try {
