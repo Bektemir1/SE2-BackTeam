@@ -10,12 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class AuthController {
+public class MainController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -24,12 +23,6 @@ public class AuthController {
 
     @Autowired
     private JwtUtil jwtTokenUtil;
-
-    // Getting all user data
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public UserDetails getUsersDataById(@AuthenticationPrincipal UserDetails userDetails) {
-        return userDetails;
-    }
 
     // Authentication with jwt token
     @RequestMapping(value = "/login", method = RequestMethod.POST)

@@ -21,6 +21,11 @@ public class Users {
     private Integer status;
     private String brith_date;
     private boolean active;
+    private Integer attendance;
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getUsername() {
         return username;
@@ -124,5 +129,13 @@ public class Users {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Integer getAttendance() {
+        return attendance;
+    }
+
+    public void setAttendance(Integer attendance) {
+        this.attendance = attendance;
     }
 }

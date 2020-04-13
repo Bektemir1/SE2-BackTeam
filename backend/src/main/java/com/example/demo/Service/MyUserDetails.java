@@ -24,6 +24,7 @@ public class MyUserDetails implements UserDetails {
     private String brith_date;
     private List<GrantedAuthority> authorities;
     private boolean active;
+    private Integer attendance;
 
     public MyUserDetails(Users user) {
         this.username = user.getUsername();
@@ -41,6 +42,7 @@ public class MyUserDetails implements UserDetails {
         this.status = user.getStatus();
         this.brith_date = user.getBrith_date();
         this.active = user.isActive();
+        this.attendance = user.getAttendance();
     }
 
     public MyUserDetails() {
@@ -120,6 +122,14 @@ public class MyUserDetails implements UserDetails {
 
     public void setAuthorities(List<GrantedAuthority> authorities) {
         this.authorities = authorities;
+    }
+
+    public Integer getAttendance() {
+        return attendance;
+    }
+
+    public void setAttendance(Integer attendance) {
+        this.attendance = attendance;
     }
 
     @Override
