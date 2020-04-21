@@ -19,9 +19,10 @@ public class Users {
     private String last_login_ip;
     private Integer balance;
     private Integer status;
-    private String brith_date;
-    private boolean active;
-    private Integer attendance;
+    private String birth_date;
+    private Integer subject_id;
+    private Integer faculty_id;
+    private Integer advisor_id;
 
     public Integer getId() {
         return id;
@@ -115,27 +116,35 @@ public class Users {
         this.status = status;
     }
 
-    public String getBrith_date() {
-        return brith_date;
+    public String getBirth_date() {
+        return birth_date;
     }
 
-    public void setBrith_date(String brith_date) {
-        this.brith_date = brith_date;
+    public void setBirth_date(String birth_date) {
+        this.birth_date = birth_date;
     }
 
-    public boolean isActive() {
-        return active;
+    public Integer getSubject_id() {
+        return subject_id;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setSubject_id(Integer subject_id) {
+        this.subject_id = subject_id;
     }
 
-    public Integer getAttendance() {
-        return attendance;
+    public Integer getFaculty_id() {
+        return faculty_id;
     }
 
-    public void setAttendance(Integer attendance) {
-        this.attendance = attendance;
+    public void setFaculty_id(Integer faculty_id) {
+        this.faculty_id = faculty_id;
+    }
+
+    public Integer getAdvisor_id() {
+        return advisor_id;
+    }
+
+    public void setAdvisor_id(Integer advisor_id) {
+        this.advisor_id = advisor_id;
     }
 }

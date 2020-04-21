@@ -8,15 +8,20 @@ public class Attendance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @ManyToOne
+    @JoinColumn(name="subject_id", nullable=false)
+    private Subjects subjects;
     private String email;
-    private Integer attend;
     private Integer absent;
+    private Integer attend;
     private Integer permitted;
 
-    public Attendance(String email, Integer attend, Integer absent, Integer permitted) {
+    public Attendance(Integer id, Subjects subjects, String email, Integer absent, Integer attend, Integer permitted) {
+        this.id = id;
+        this.subjects = subjects;
         this.email = email;
-        this.attend = attend;
         this.absent = absent;
+        this.attend = attend;
         this.permitted = permitted;
     }
 
@@ -27,6 +32,14 @@ public class Attendance {
         return id;
     }
 
+    public Subjects getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Subjects subjects) {
+        this.subjects = subjects;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -35,20 +48,20 @@ public class Attendance {
         this.email = email;
     }
 
-    public Integer getAttend() {
-        return attend;
-    }
-
-    public void setAttend(Integer attend) {
-        this.attend = attend;
-    }
-
     public Integer getAbsent() {
         return absent;
     }
 
     public void setAbsent(Integer absent) {
         this.absent = absent;
+    }
+
+    public Integer getAttend() {
+        return attend;
+    }
+
+    public void setAttend(Integer attend) {
+        this.attend = attend;
     }
 
     public Integer getPermitted() {

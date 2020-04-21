@@ -12,8 +12,7 @@ public class AttendanceService {
     @Autowired
     AttendanceRepository attendanceRepository;
 
-    // Get User attendance
     public List<Attendance> getUserAttendance(String email) {
-        return attendanceRepository.findUserAttendanceByEmail(email);
+        return attendanceRepository.findAttendanceByEmail(email);
     }
 }

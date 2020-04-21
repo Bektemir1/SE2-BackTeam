@@ -11,22 +11,25 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MyUserDetails implements UserDetails {
+    private Integer id;
     private String username;
-    private String password;
     private String firstname;
     private String lastname;
+    private String password;
+    private List<GrantedAuthority> authorities;
     private String email;
     private String last_login_date;
     private String registration_date;
     private String last_login_ip;
     private Integer balance;
     private Integer status;
-    private String brith_date;
-    private List<GrantedAuthority> authorities;
-    private boolean active;
-    private Integer attendance;
+    private String birth_date;
+    private Integer subject_id;
+    private Integer faculty_id;
+    private Integer advisor_id;
 
     public MyUserDetails(Users user) {
+        this.id = user.getId();
         this.username = user.getUsername();
         this.firstname = user.getFirstname();
         this.lastname = user.getLastname();
@@ -40,12 +43,17 @@ public class MyUserDetails implements UserDetails {
         this.last_login_ip = user.getLast_login_ip();
         this.balance = user.getBalance();
         this.status = user.getStatus();
-        this.brith_date = user.getBrith_date();
-        this.active = user.isActive();
-        this.attendance = user.getAttendance();
+        this.birth_date = user.getBirth_date();
+        this.subject_id = user.getSubject_id();
+        this.faculty_id = user.getFaculty_id();
+        this.advisor_id = user.getAdvisor_id();
     }
 
     public MyUserDetails() {
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getFirstname() {
@@ -112,24 +120,36 @@ public class MyUserDetails implements UserDetails {
         this.status = status;
     }
 
-    public String getBrith_date() {
-        return brith_date;
+    public String getBirth_date() {
+        return birth_date;
     }
 
-    public void setBrith_date(String brith_date) {
-        this.brith_date = brith_date;
+    public void setBirth_date(String birth_date) {
+        this.birth_date = birth_date;
     }
 
-    public void setAuthorities(List<GrantedAuthority> authorities) {
-        this.authorities = authorities;
+    public Integer getSubject_id() {
+        return subject_id;
     }
 
-    public Integer getAttendance() {
-        return attendance;
+    public void setSubject_id(Integer subject_id) {
+        this.subject_id = subject_id;
     }
 
-    public void setAttendance(Integer attendance) {
-        this.attendance = attendance;
+    public Integer getFaculty_id() {
+        return faculty_id;
+    }
+
+    public void setFaculty_id(Integer faculty_id) {
+        this.faculty_id = faculty_id;
+    }
+
+    public Integer getAdvisor_id() {
+        return advisor_id;
+    }
+
+    public void setAdvisor_id(Integer advisor_id) {
+        this.advisor_id = advisor_id;
     }
 
     @Override
@@ -164,6 +184,6 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return active;
+        return true;
     }
 }
