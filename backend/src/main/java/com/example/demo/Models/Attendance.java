@@ -15,14 +15,18 @@ public class Attendance {
     private Integer absent;
     private Integer attend;
     private Integer permitted;
+    private String year;
+    private Integer term;
 
-    public Attendance(Integer id, Subjects subjects, String email, Integer absent, Integer attend, Integer permitted) {
+    public Attendance(Integer id, Subjects subjects, String email, Integer absent, Integer attend, Integer permitted, String year, Integer term) {
         this.id = id;
         this.subjects = subjects;
         this.email = email;
         this.absent = absent;
         this.attend = attend;
         this.permitted = permitted;
+        this.year = year;
+        this.term = term;
     }
 
     public Attendance() {
@@ -70,5 +74,21 @@ public class Attendance {
 
     public void setPermitted(Integer permitted) {
         this.permitted = permitted;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public Integer getTerm() {
+        return term;
+    }
+
+    public void setTerm(Integer term) {
+        this.term = term;
     }
 }

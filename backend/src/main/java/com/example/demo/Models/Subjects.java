@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class Subjects {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer subject_id;
+    private Integer id;
     private String title;
     private String code_sub;
     private Integer faculty_id;
     private Integer department_id;
 
     public Subjects(Integer subject_id, String title, String code_sub, Integer faculty_id, Integer department_id) {
-        this.subject_id = subject_id;
+        this.id = subject_id;
         this.title = title;
         this.code_sub = code_sub;
         this.faculty_id = faculty_id;
@@ -25,7 +25,7 @@ public class Subjects {
     }
 
     public Integer getId() {
-        return subject_id;
+        return id;
     }
 
     public String getTitle() {
