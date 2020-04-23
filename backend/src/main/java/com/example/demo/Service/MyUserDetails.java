@@ -18,15 +18,15 @@ public class MyUserDetails implements UserDetails {
     private String password;
     private List<GrantedAuthority> authorities;
     private String email;
-    private String last_login_date;
-    private String registration_date;
-    private String last_login_ip;
+    private String lastLoginDate;
+    private String registrationDate;
+    private String lastLoginIp;
     private Integer balance;
     private Integer status;
-    private String birth_date;
-    private Integer subject_id;
-    private Integer faculty_id;
-    private Integer advisor_id;
+    private String birthDate;
+    private Integer departmentId;
+    private Integer facultyId;
+    private Integer advisorId;
 
     public MyUserDetails(Users user) {
         this.id = user.getId();
@@ -38,15 +38,15 @@ public class MyUserDetails implements UserDetails {
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
         this.email = user.getEmail();
-        this.last_login_date = user.getLast_login_date();
-        this.registration_date = user.getRegistration_date();
-        this.last_login_ip = user.getLast_login_ip();
+        this.lastLoginDate = user.getLastLoginDate();
+        this.registrationDate = user.getRegistrationDate();
+        this.lastLoginIp = user.getLastLoginIp();
         this.balance = user.getBalance();
         this.status = user.getStatus();
-        this.birth_date = user.getBirth_date();
-        this.subject_id = user.getSubject_id();
-        this.faculty_id = user.getFaculty_id();
-        this.advisor_id = user.getAdvisor_id();
+        this.birthDate = user.getBirthDate();
+        this.departmentId = user.getDepartmentId();
+        this.facultyId = user.getFacultyId();
+        this.advisorId = user.getAdvisorId();
     }
 
     public MyUserDetails() {
@@ -80,28 +80,28 @@ public class MyUserDetails implements UserDetails {
         this.email = email;
     }
 
-    public String getLast_login_date() {
-        return last_login_date;
+    public String getLastLoginDate() {
+        return lastLoginDate;
     }
 
-    public void setLast_login_date(String last_login_date) {
-        this.last_login_date = last_login_date;
+    public void setLastLoginDate(String lastLoginDate) {
+        this.lastLoginDate = lastLoginDate;
     }
 
-    public String getRegistration_date() {
-        return registration_date;
+    public String getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegistration_date(String registration_date) {
-        this.registration_date = registration_date;
+    public void setRegistrationDate(String registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
-    public String getLast_login_ip() {
-        return last_login_ip;
+    public String getLastLoginIp() {
+        return lastLoginIp;
     }
 
-    public void setLast_login_ip(String last_login_ip) {
-        this.last_login_ip = last_login_ip;
+    public void setLastLoginIp(String lastLoginIp) {
+        this.lastLoginIp = lastLoginIp;
     }
 
     public Integer getBalance() {
@@ -120,36 +120,36 @@ public class MyUserDetails implements UserDetails {
         this.status = status;
     }
 
-    public String getBirth_date() {
-        return birth_date;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(String birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public Integer getSubject_id() {
-        return subject_id;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setSubject_id(Integer subject_id) {
-        this.subject_id = subject_id;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public Integer getFaculty_id() {
-        return faculty_id;
+    public Integer getFacultyId() {
+        return facultyId;
     }
 
-    public void setFaculty_id(Integer faculty_id) {
-        this.faculty_id = faculty_id;
+    public void setFacultyId(Integer facultyId) {
+        this.facultyId = facultyId;
     }
 
-    public Integer getAdvisor_id() {
-        return advisor_id;
+    public Integer getAdvisorId() {
+        return advisorId;
     }
 
-    public void setAdvisor_id(Integer advisor_id) {
-        this.advisor_id = advisor_id;
+    public void setAdvisorId(Integer advisorId) {
+        this.advisorId = advisorId;
     }
 
     @Override

@@ -7,15 +7,29 @@ import javax.persistence.*;
 public class Attendance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
     @ManyToOne
-    @JoinColumn(name="subject_id", nullable=false)
+    @JoinColumn(name="subjectId", referencedColumnName = "id")
     private Subjects subjects;
+
+    @Column(name = "email", length = 255)
     private String email;
+
+    @Column(name = "absent")
     private Integer absent;
+
+    @Column(name = "attend")
     private Integer attend;
+
+    @Column(name = "permitted")
     private Integer permitted;
+
+    @Column(name = "year", length = 255)
     private String year;
+
+    @Column(name = "term")
     private Integer term;
 
     public Attendance(Integer id, Subjects subjects, String email, Integer absent, Integer attend, Integer permitted, String year, Integer term) {

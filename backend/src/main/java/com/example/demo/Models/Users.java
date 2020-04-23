@@ -7,22 +7,53 @@ import javax.persistence.*;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "username", length = 255)
     private String username;
+
+    @Column(name = "firstname", length = 255)
     private String firstname;
+
+    @Column(name = "lastname", length = 255)
     private String lastname;
+
+    @Column(name = "password", length = 255)
     private String password;
+
+    @Column(name = "roles", length = 255)
     private String roles;
+
+    @Column(name = "email", length = 255)
     private String email;
-    private String last_login_date;
-    private String registration_date;
-    private String last_login_ip;
+
+    @Column(name = "lastLoginDate", length = 255)
+    private String lastLoginDate;
+
+    @Column(name = "registrationDate", length = 255)
+    private String registrationDate;
+
+    @Column(name = "lastLoginIp", length = 255)
+    private String lastLoginIp;
+
+    @Column(name = "balance")
     private Integer balance;
+
+    @Column(name = "status")
     private Integer status;
-    private String birth_date;
-    private Integer subject_id;
-    private Integer faculty_id;
-    private Integer advisor_id;
+
+    @Column(name = "birthDate", length = 255)
+    private String birthDate;
+
+    @Column(name = "departmentId")
+    private Integer departmentId;
+
+    @Column(name = "facultyId")
+    private Integer facultyId;
+
+    @Column(name = "advisorId")
+    private Integer advisorId;
 
     public Integer getId() {
         return id;
@@ -76,28 +107,28 @@ public class Users {
         this.email = email;
     }
 
-    public String getLast_login_date() {
-        return last_login_date;
+    public String getLastLoginDate() {
+        return lastLoginDate;
     }
 
-    public void setLast_login_date(String last_login_date) {
-        this.last_login_date = last_login_date;
+    public void setLastLoginDate(String lastLoginDate) {
+        this.lastLoginDate = lastLoginDate;
     }
 
-    public String getRegistration_date() {
-        return registration_date;
+    public String getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegistration_date(String registration_date) {
-        this.registration_date = registration_date;
+    public void setRegistrationDate(String registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
-    public String getLast_login_ip() {
-        return last_login_ip;
+    public String getLastLoginIp() {
+        return lastLoginIp;
     }
 
-    public void setLast_login_ip(String last_login_ip) {
-        this.last_login_ip = last_login_ip;
+    public void setLastLoginIp(String lastLoginIp) {
+        this.lastLoginIp = lastLoginIp;
     }
 
     public Integer getBalance() {
@@ -116,35 +147,35 @@ public class Users {
         this.status = status;
     }
 
-    public String getBirth_date() {
-        return birth_date;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(String birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public Integer getSubject_id() {
-        return subject_id;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setSubject_id(Integer subject_id) {
-        this.subject_id = subject_id;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public Integer getFaculty_id() {
-        return faculty_id;
+    public Integer getFacultyId() {
+        return facultyId;
     }
 
-    public void setFaculty_id(Integer faculty_id) {
-        this.faculty_id = faculty_id;
+    public void setFacultyId(Integer facultyId) {
+        this.facultyId = facultyId;
     }
 
-    public Integer getAdvisor_id() {
-        return advisor_id;
+    public Integer getAdvisorId() {
+        return advisorId;
     }
 
-    public void setAdvisor_id(Integer advisor_id) {
-        this.advisor_id = advisor_id;
+    public void setAdvisorId(Integer advisorId) {
+        this.advisorId = advisorId;
     }
 }
