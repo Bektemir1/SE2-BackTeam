@@ -32,4 +32,10 @@ public class CurriculaController {
     public List<Subjects> getAllSubjectsOfUser(@AuthenticationPrincipal MyUserDetails myUserDetails) {
         return subjectsService.getAllByDepartmentId(myUserDetails.getDepartmentId());
     }
+
+    // My Curriculum Controller
+    @RequestMapping(value ="curricula/myCurriculum", method = RequestMethod.GET)
+    public List<Subjects> getMyCurriculum(@AuthenticationPrincipal MyUserDetails myUserDetails) {
+        return subjectsService.getAllByDepartmentId(myUserDetails.getDepartmentId());
+    }
 }

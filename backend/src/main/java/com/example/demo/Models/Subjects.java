@@ -24,12 +24,20 @@ public class Subjects {
     @JoinColumn(name="departmentId", referencedColumnName = "id")
     private Departments departments;
 
-    public Subjects(Integer id, String title, String codeSub, Faculty faculty, Departments departments) {
+    @Column(name = "ects")
+    private String ects;
+
+    @Column(name = "lc")
+    private String lc;
+
+    public Subjects(Integer id, String title, String codeSub, Faculty faculty, Departments departments, String ects, String lc) {
         this.id = id;
         this.title = title;
         this.codeSub = codeSub;
         this.faculty = faculty;
         this.departments = departments;
+        this.ects = ects;
+        this.lc = lc;
     }
 
     public Subjects() {
@@ -69,5 +77,21 @@ public class Subjects {
 
     public void setDepartments(Departments departments) {
         this.departments = departments;
+    }
+
+    public String getEcts() {
+        return ects;
+    }
+
+    public void setEcts(String ects) {
+        this.ects = ects;
+    }
+
+    public String getLc() {
+        return lc;
+    }
+
+    public void setLc(String lc) {
+        this.lc = lc;
     }
 }
