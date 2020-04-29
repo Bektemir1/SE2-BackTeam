@@ -20,10 +20,18 @@ public class UserSubjects {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Subjects subjects;
 
-    public UserSubjects(Integer id, Integer userId, Subjects subjects) {
+    @Column(name = "year", length = 255)
+    private String year;
+
+    @Column(name = "term")
+    private Integer term;
+
+    public UserSubjects(Integer id, Integer userId, Subjects subjects, String year, Integer term) {
         this.id = id;
         this.userId = userId;
         this.subjects = subjects;
+        this.year = year;
+        this.term = term;
     }
 
     public UserSubjects() {
@@ -47,5 +55,21 @@ public class UserSubjects {
 
     public void setSubjects(Subjects subjects) {
         this.subjects = subjects;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public Integer getTerm() {
+        return term;
+    }
+
+    public void setTerm(Integer term) {
+        this.term = term;
     }
 }
