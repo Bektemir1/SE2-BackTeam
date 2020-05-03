@@ -16,10 +16,10 @@ import java.util.List;
 @RestController
 public class CurriculaController {
     @Autowired
-    DepartmentsService departmentsService;
+    private DepartmentsService departmentsService;
 
     @Autowired
-    SubjectsService subjectsService;
+    private SubjectsService subjectsService;
 
     // Get all departments that corresponds to user faculty
     @RequestMapping(value = "/curricula/departments", method = RequestMethod.GET)

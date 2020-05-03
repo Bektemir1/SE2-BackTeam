@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class AttendanceService {
     @Autowired
-    AttendanceRepository attendanceRepository;
+    private AttendanceRepository attendanceRepository;
 
     // Finds in attendance table by email and gets exact year or term
     public List<Attendance> getUserAttendanceByYearAndTerm(String email, String year, Integer term) {

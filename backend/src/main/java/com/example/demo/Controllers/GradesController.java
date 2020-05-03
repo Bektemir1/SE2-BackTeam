@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class GradesController {
     @Autowired
-    GradesService gradesService;
+    private GradesService gradesService;
 
     // Post request to get grades according to particular term and year
     @RequestMapping(value = "/grades", method = RequestMethod.POST)

@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class GradesService {
     @Autowired
-    GradesRepository gradesRepository;
+    private GradesRepository gradesRepository;
 
     // Gets grades according to particular term and year
     public List<Grades> getParticularGrades(Integer userId, String year, Integer term) {

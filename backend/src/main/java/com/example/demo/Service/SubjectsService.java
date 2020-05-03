@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class SubjectsService {
     @Autowired
-    SubjectsRepository subjectsRepository;
+    private SubjectsRepository subjectsRepository;
 
     // Get all subjects that corresponds to user department
     public List<Subjects> getAllByDepartmentId(Integer departmentId) {

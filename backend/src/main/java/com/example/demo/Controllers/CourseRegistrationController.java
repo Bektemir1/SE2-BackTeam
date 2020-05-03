@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 public class CourseRegistrationController {
     @Autowired
-    UserSubjectsService userSubjectsService;
+    private UserSubjectsService userSubjectsService;
 
     // Post request for adding subjects to userSubject table
     @RequestMapping(value = "courses/registration", method = RequestMethod.POST)

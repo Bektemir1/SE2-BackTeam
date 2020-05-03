@@ -72,6 +72,10 @@ public class MyUserDetails implements UserDetails {
         this.lastname = lastname;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }

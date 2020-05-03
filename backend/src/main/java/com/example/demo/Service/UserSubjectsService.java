@@ -12,10 +12,10 @@ import java.util.List;
 @Service
 public class UserSubjectsService {
     @Autowired
-    UserSubjectsRepository userSubjectsRepository;
+    private UserSubjectsRepository userSubjectsRepository;
 
     @Autowired
-    SubjectsRepository subjectsRepository;
+    private SubjectsRepository subjectsRepository;
 
     // Save subjects in UserSubjects repository
     public UserSubjects saveUserSubjects(Integer subjectId, Integer userId) {

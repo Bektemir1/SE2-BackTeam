@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class AttendanceController {
     @Autowired
-    AttendanceService attendanceService;
+    private AttendanceService attendanceService;
 
     // Post request to get exact term or year of User Attendance
     @RequestMapping(value = "/attendance", method = RequestMethod.POST)

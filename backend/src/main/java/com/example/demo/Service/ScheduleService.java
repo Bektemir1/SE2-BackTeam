@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ScheduleService {
     @Autowired
-    ScheduleRepository scheduleRepository;
+    private ScheduleRepository scheduleRepository;
 
     // Gets schedule particular term and year
     public List<Schedule> getParticularSchedule(Integer departmentId, String year, Integer term) {

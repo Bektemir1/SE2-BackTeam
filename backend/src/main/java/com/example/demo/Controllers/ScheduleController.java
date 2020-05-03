@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class ScheduleController {
     @Autowired
-    ScheduleService scheduleService;
+    private ScheduleService scheduleService;
 
     // Post request to get particular term or year
     @RequestMapping(value = "/schedule", method = RequestMethod.POST)
