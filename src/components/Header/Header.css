@@ -1,0 +1,21 @@
+.avatar{
+    width: 150px;
+    height: 150px;
+}
+.title{
+    font-weight: 700;
+    margin-left: 40px;
+    font-size: 30px;
+    position: relative;
+}
+.header{
+    padding:20px 0;
+}
+.title:before{
+    content:'';
+    width: 200px;
+    height: 3px;
+    background:red;
+    position: absolute;
+    top:60px;
+}
