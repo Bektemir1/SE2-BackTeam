@@ -15,14 +15,14 @@ public class AttendanceController {
     private AttendanceService attendanceService;
 
     // Post request to get exact term or year of User Attendance
-    @RequestMapping(value = "/attendance", method = RequestMethod.POST)
+    @RequestMapping(value = "/student/attendance", method = RequestMethod.POST)
     public List<Attendance> getUserAttendanceOfExactYear(@AuthenticationPrincipal MyUserDetails myUserDetails,
                                                          @RequestBody Attendance attendance) {
         return attendanceService.getUserAttendanceByYearAndTerm(myUserDetails.getEmail(), attendance.getYear(), attendance.getTerm());
     }
 
     // Get current date User Attendance
-    @RequestMapping(value = "/attendance", method = RequestMethod.GET)
+    @RequestMapping(value = "/student/attendance", method = RequestMethod.GET)
     public List<Attendance> getUserAttendance(@AuthenticationPrincipal MyUserDetails myUserDetails) {
         return attendanceService.getUserAttendanceByEmailCurrentDate(myUserDetails.getEmail());
     }

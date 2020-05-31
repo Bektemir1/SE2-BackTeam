@@ -3,8 +3,8 @@ package com.example.demo.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "advisors")
-public class Advisors {
+@Table(name = "teachers")
+public class Teachers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -25,7 +25,7 @@ public class Advisors {
     @Column(name = "birthDate", length = 255)
     private String birthDate;
 
-    public Advisors(Integer id, String name, String surname, String email, String phoneNumber, String birthDate) {
+    public Teachers(Integer id, String name, String surname, String email, String phoneNumber, String birthDate) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -34,7 +34,7 @@ public class Advisors {
         this.birthDate = birthDate;
     }
 
-    public Advisors() {
+    public Teachers() {
     }
 
     public Integer getId() {

@@ -16,13 +16,13 @@ public class CalendarController {
     private CalendarService calendarService;
 
     // Post request to get particular year and term calendar
-    @RequestMapping(value = "/calendar", method = RequestMethod.POST)
+    @RequestMapping(value = "/student/calendar", method = RequestMethod.POST)
     public List<CalendarEntity> getParticularCalendar(@RequestBody CalendarEntity calendarEntity) {
         return calendarService.getParticularCalendar(calendarEntity.getYear(), calendarEntity.getTerm());
     }
 
     // Gets current year and term calendar
-    @RequestMapping(value = "/calendar", method = RequestMethod.GET)
+    @RequestMapping(value = "/student/calendar", method = RequestMethod.GET)
     public List<CalendarEntity> getCurrentCalendar() {
         return calendarService.getCurrentCalendar();
     }

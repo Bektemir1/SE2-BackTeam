@@ -26,7 +26,7 @@ public class MyUserDetails implements UserDetails {
     private String birthDate;
     private Integer departmentId;
     private Integer facultyId;
-    private Integer advisorId;
+    private Integer teaecherId;
 
     public MyUserDetails(Users user) {
         this.id = user.getId();
@@ -46,7 +46,7 @@ public class MyUserDetails implements UserDetails {
         this.birthDate = user.getBirthDate();
         this.departmentId = user.getDepartmentId();
         this.facultyId = user.getFacultyId();
-        this.advisorId = user.getAdvisorId();
+        this.teaecherId = user.getTeacherId();
     }
 
     public MyUserDetails() {
@@ -148,12 +148,12 @@ public class MyUserDetails implements UserDetails {
         this.facultyId = facultyId;
     }
 
-    public Integer getAdvisorId() {
-        return advisorId;
+    public Integer getTeaecherId() {
+        return teaecherId;
     }
 
-    public void setAdvisorId(Integer advisorId) {
-        this.advisorId = advisorId;
+    public void setTeaecherId(Integer teaecherId) {
+        this.teaecherId = teaecherId;
     }
 
     @Override

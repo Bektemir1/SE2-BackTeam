@@ -29,8 +29,8 @@ public class Schedule {
     private Integer term;
 
     @OneToOne
-    @JoinColumn(name="advisorId", referencedColumnName = "id")
-    private Advisors advisors;
+    @JoinColumn(name="teacherId", referencedColumnName = "id")
+    private Teachers teachers;
 
     @OneToOne
     @JoinColumn(name="subjectId", referencedColumnName = "id")
@@ -39,7 +39,7 @@ public class Schedule {
     @Column(name = "departmentId")
     private Integer departmentId;
 
-    public Schedule(Integer id, String day, String lessonStarts, String lessonEnds, Integer room, String year, Integer term, Advisors advisors, Subjects subjects, Integer departmentId) {
+    public Schedule(Integer id, String day, String lessonStarts, String lessonEnds, Integer room, String year, Integer term, Teachers teachers, Subjects subjects, Integer departmentId) {
         this.id = id;
         this.day = day;
         this.lessonStarts = lessonStarts;
@@ -47,7 +47,7 @@ public class Schedule {
         this.room = room;
         this.year = year;
         this.term = term;
-        this.advisors = advisors;
+        this.teachers = teachers;
         this.subjects = subjects;
         this.departmentId = departmentId;
     }
@@ -107,12 +107,12 @@ public class Schedule {
         this.term = term;
     }
 
-    public Advisors getAdvisors() {
-        return advisors;
+    public Teachers getTeachers() {
+        return teachers;
     }
 
-    public void setAdvisors(Advisors advisors) {
-        this.advisors = advisors;
+    public void setTeachers(Teachers teachers) {
+        this.teachers = teachers;
     }
 
     public Subjects getSubjects() {

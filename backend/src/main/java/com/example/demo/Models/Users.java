@@ -52,8 +52,8 @@ public class Users {
     @Column(name = "facultyId")
     private Integer facultyId;
 
-    @Column(name = "advisorId")
-    private Integer advisorId;
+    @Column(name = "teacherId")
+    private Integer teacherId;
 
     public Integer getId() {
         return id;
@@ -171,11 +171,11 @@ public class Users {
         this.facultyId = facultyId;
     }
 
-    public Integer getAdvisorId() {
-        return advisorId;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setAdvisorId(Integer advisorId) {
-        this.advisorId = advisorId;
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
 }

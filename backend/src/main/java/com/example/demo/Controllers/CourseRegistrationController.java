@@ -19,14 +19,14 @@ public class CourseRegistrationController {
     private UserSubjectsService userSubjectsService;
 
     // Post request for adding subjects to userSubject table
-    @RequestMapping(value = "courses/registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/student/courses/registration", method = RequestMethod.POST)
     public UserSubjects addUserSubjects(@AuthenticationPrincipal MyUserDetails myUserDetails,
                                         @RequestBody AddUserSubjectsRequest request) {
         return userSubjectsService.saveUserSubjects(request.getSubjectId(), myUserDetails.getId());
     }
 
     // Get all subjects of user
-    @RequestMapping(value = "courses/show", method = RequestMethod.GET)
+    @RequestMapping(value = "/student/courses/show", method = RequestMethod.GET)
     public List<UserSubjects> getAllSubjectsOfUser(@AuthenticationPrincipal MyUserDetails myUserDetails) {
         return userSubjectsService.getAllSubjects(myUserDetails.getId());
     }

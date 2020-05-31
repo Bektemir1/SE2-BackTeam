@@ -18,20 +18,20 @@ public class GradesController {
     private GradesService gradesService;
 
     // Post request to get grades according to particular term and year
-    @RequestMapping(value = "/grades", method = RequestMethod.POST)
+    @RequestMapping(value = "/student/grades", method = RequestMethod.POST)
     public List<Grades> getParticularGrades(@AuthenticationPrincipal MyUserDetails myUserDetails,
                                             @RequestBody Grades grades) {
         return gradesService.getParticularGrades(myUserDetails.getId(), grades.getYear(), grades.getTerm());
     }
 
     // Get all grades according to current term and year
-    @RequestMapping(value = "/grades", method = RequestMethod.GET)
+    @RequestMapping(value = "/student/grades", method = RequestMethod.GET)
     public List<Grades> getGrades(@AuthenticationPrincipal MyUserDetails myUserDetails) {
         return gradesService.getGrades(myUserDetails.getId());
     }
 
     // Get transcript
-    @RequestMapping(value = "/transcript", method = RequestMethod.GET)
+    @RequestMapping(value = "/student/transcript", method = RequestMethod.GET)
     public List<Grades> getTransciprt(@AuthenticationPrincipal MyUserDetails myUserDetails) {
         return gradesService.getTranscript(myUserDetails.getId());
     }
